@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
 
-## Project info
+# ГарденТех
 
-**URL**: https://lovable.dev/projects/3ac3aba7-b197-4495-a27a-87116aafadc3
+Паметна апликација за управљање баштом са ЕСП8266 интеграцијом.
 
-## How can I edit this code?
+## О Пројекту
 
-There are several ways of editing your application.
+ГарденТех је решење за паметно баштованство које се састоји од:
 
-**Use Lovable**
+1. **ПВА Апликације** - Реакт апликација за управљање и надгледање
+2. **ЕСП8266 Фирмвера** - Софтвер за микроконтролер који управља сензорима и пумпом
+3. **Документације** - Упутства за коришћење и конфигурацију
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3ac3aba7-b197-4495-a27a-87116aafadc3) and start prompting.
+## Функционалности
 
-Changes made via Lovable will be committed automatically to this repo.
+- Контролна табла за надгледање сензора (температура, влажност ваздуха, влажност земљишта)
+- Три режима управљања наводњавањем: ручни, временски и аутоматски
+- Подешавање Wi-Fi везе уређаја
+- Водичи за узгој папрке, парадајза и краставца
+- Календар узгоја за све три биљке
+- Препоруке за ротацију усева
+- Информације о најчешћим болестима и штеточинама
 
-**Use your preferred IDE**
+## Структура Пројекта
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+├── docs/                    # Документација
+│   ├── hardware/            # Дијаграми повезивања сензора
+│   ├── firmware/            # Упутства за ажурирање фирмвера
+│   ├── wifi-setup/          # Упутства за Wi-Fi подешавање
+│   └── user-guide/          # Кориснички водич
+├── src/                     # Изворни код апликације
+│   ├── components/          # Реакт компоненте
+│   ├── hooks/               # Реакт хуци
+│   ├── pages/               # Странице апликације
+│   └── firmware/            # ЕСП8266 фирмвер
+└── README.md                # Главни README фајл
 ```
 
-**Edit a file directly in GitHub**
+## Потребан Хардвер
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- ЕСП8266 микроконтролер (препоручујемо NodeMCU)
+- DHT22 сензор температуре и влажности
+- Капацитивни сензор влажности земљишта
+- Релеј за управљање пумпом
+- 12V пумпа за воду
+- Каблови и додатни материјал
 
-**Use GitHub Codespaces**
+## Инсталација
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Апликација**: Посетите [app.gardentech.io](https://app.gardentech.io) или инсталирајте као ПВА
+2. **Фирмвер**: Пратите упутства из `docs/firmware/` директоријума
+3. **Повезивање сензора**: Пратите шеме повезивања из `docs/hardware/` директоријума
 
-## What technologies are used for this project?
+## Коришћење
 
-This project is built with:
+Детаљна упутства за коришћење система доступна су у одељку `docs/user-guide/` и укључена су у саму апликацију.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Лиценца
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/3ac3aba7-b197-4495-a27a-87116aafadc3) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT Лиценца
