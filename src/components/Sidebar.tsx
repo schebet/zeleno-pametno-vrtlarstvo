@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
       <Button
         variant="ghost"
         size="icon"
-        className="fixed top-4 left-4 z-40 md:hidden"
+        className="fixed top-4 left-4 z-40 md:hidden bg-primary text-primary-foreground"
         onClick={onToggle}
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -48,12 +48,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
     
       <aside
         className={cn(
-          "fixed left-0 top-0 z-30 h-full w-64 transform bg-garden-dark text-white transition-transform duration-300 ease-in-out md:relative md:translate-x-0",
+          "fixed left-0 top-0 z-30 h-full w-64 transform bg-sidebar text-sidebar-foreground transition-transform duration-300 ease-in-out md:relative md:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="flex h-16 items-center justify-center border-b border-garden-dark">
-          <h1 className="text-2xl font-bold">ГарденТех</h1>
+        <div className="flex h-16 items-center justify-center border-b border-sidebar-border">
+          <h1 className="text-2xl font-bold text-sidebar-foreground">ГарденТех</h1>
         </div>
         
         <nav className="mt-6 px-2">
@@ -65,8 +65,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
                   className={cn(
                     "flex items-center rounded-md px-4 py-3 transition-colors",
                     location.pathname === item.path
-                      ? "bg-garden-main text-white"
-                      : "hover:bg-garden-main/80"
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                      : "hover:bg-sidebar-accent/50 text-sidebar-foreground"
                   )}
                 >
                   {item.icon}
