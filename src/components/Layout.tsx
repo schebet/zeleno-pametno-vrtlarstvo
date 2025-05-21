@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true); // Start with the sidebar open
   
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
